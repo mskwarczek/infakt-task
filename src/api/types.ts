@@ -19,6 +19,7 @@ export type ApiType<T> =
 
 export type AccountantType = {
   cell: string;
+  gender: string;
   name: {
     first: string;
     last: string;
