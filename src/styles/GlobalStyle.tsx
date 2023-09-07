@@ -15,6 +15,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme })  => theme.fontSize.medium};
     font-weight: ${({ theme })  => theme.fontWeight.normal};
   }
+
+  a {
+    color: ${({ theme }) => theme.color.text.primary};
+    text-decoration: none;
+  }
 `;
  
 export default GlobalStyle;

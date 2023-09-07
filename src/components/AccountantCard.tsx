@@ -16,7 +16,7 @@ const CardWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const MailText = styled.span`
+const MailText = styled.a`
   text-decoration: underline;
 `;
 
@@ -30,8 +30,8 @@ const AccountantCard = ({ cell, gender, name, email, picture }: AccountantType) 
   return (
     <CardWrapper>
       <CardTitle label={gender === 'male' ? 'Twój księgowy' : 'Twoja księgowa'} text={`${name.first} ${name.last}`} pic={picture.medium} />
-      <CardSection label={'E-mail'}><MailText>{email}</MailText></CardSection>
-      <CardSection label={'Telefon'}>{cell}</CardSection>
+      <CardSection label={'E-mail'}><MailText href={`mailto:${email}`}>{email}</MailText></CardSection>
+      <CardSection label={'Telefon'}><a href={`tel:${cell}`}>{cell}</a></CardSection>
       <CardSection label={'Średnia cena netto usługi / m-c'}>350,00 <CurrencyText>PLN</CurrencyText></CardSection>
       <Button text={'Dowiedz się więcej'} />
     </CardWrapper>

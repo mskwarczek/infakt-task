@@ -11,6 +11,12 @@ const ImageWrapper = styled.img`
   border-radius: ${({ theme }) => theme.borderRad.small};
 `;
 
+const TextWrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+`;
+
 const LabelParagraph = styled.p`
   color: ${({ theme }) => theme.color.text.secondary};
   font-size: ${({ theme }) => theme.fontSize.medium};
@@ -34,10 +40,10 @@ const CardTitle = ({ label, text, pic }: CardSectionProps) => {
   return (
     <SectionWrapper>
       <ImageWrapper src={pic} alt={text} width='64' height='64' />
-      <div>
+      <TextWrapper>
         <LabelParagraph>{label}</LabelParagraph>
         <TextParagraph>{text}</TextParagraph>
-      </div>
+      </TextWrapper>
     </SectionWrapper>
   );
 };
