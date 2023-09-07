@@ -35,8 +35,8 @@ const CardTitle = ({ label, text, pic }: CardSectionProps) => {
     <SectionWrapper>
       <ImageWrapper src={pic} alt={text} width='64' height='64' />
       <div>
-        <LabelParagraph>{ label }</LabelParagraph>
-        <TextParagraph>{ text }</TextParagraph>
+        <LabelParagraph>{label}</LabelParagraph>
+        <TextParagraph>{text}</TextParagraph>
       </div>
     </SectionWrapper>
   );

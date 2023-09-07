@@ -6,21 +6,12 @@ import useGetAccountants from '../api/useGetAccountants';
 
 const CardsWrapper = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  justify-content: space-between;
-  row-gap: ${({ theme }) => theme.lineHeight.medium};
-  column-gap: ${({ theme }) => theme.lineHeight.medium};
-  @media (min-width: ${({ theme }) => theme.breakpoints.s}) {
-    grid-template-columns: 1fr 1fr;
-    justify-items: stretch;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  gap: ${({ theme }) => theme.lineHeight.medium};
+  justify-content: center;
   @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoints.l}) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
   }
 `;
 
@@ -32,9 +23,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const AccountantsView = () => {
-
-  const { result: accountants, nextPage } = useGetAccountants(4);
-  console.log('accountants', accountants)
+  const { result: accountants, nextPage } = useGetAccountants(5);
 
   return (
     <div>

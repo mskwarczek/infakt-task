@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 const theme: DefaultTheme = {
   breakpoints: {
     s: '700px',
-    m: '1040px',
+    m: '1080px',
     l: '1400px',
   },
   color: {

@@ -6,8 +6,10 @@ const useGetAccountants = (amount: number) => {
     status: 'init',
   });
 
+  const includedData = 'gender,name,email,login,cell,picture';
+
   useEffect(() => {
-    fetch(`https://randomuser.me/api/?seed=abc&results=${amount}&page=1`)
+    fetch(`https://randomuser.me/api/?seed=abc&results=${amount}&inc=${includedData}&page=1`)
       .then(response => response.json())
       .then(response => setResult({ status: 'finished', payload: response }))
       .catch(error => setResult({ status: 'error', error }));
@@ -19,15 +21,14 @@ const useGetAccountants = (amount: number) => {
       status: 'loading',
       payload: result.payload,
     });
-    fetch(`https://randomuser.me/api/?seed=abc&results=${amount}&page=${result.payload.info.page + 1}`)
+    fetch(`https://randomuser.me/api/?seed=abc&results=${amount}&inc=${includedData}&page=${result.payload.info.page + 1}`)
       .then(response => response.json())
       .then(response => {
-        const newResults = [...result.payload.results, ...response.results];
         setResult({
           status: 'finished',
           payload: {
             info: response.info,
-            results: newResults,
+            results: [...result.payload.results, ...response.results],
           }
         });
       })

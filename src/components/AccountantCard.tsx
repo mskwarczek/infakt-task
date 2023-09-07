@@ -10,6 +10,7 @@ const CardWrapper = styled.div`
   padding: ${({ theme }) => theme.lineHeight.medium};
   border: 1px solid ${({ theme }) => theme.color.bg.secondary};
   border-radius: ${({ theme }) => theme.borderRad.medium};
+  box-shadow: 0px 1px 3px rgba(0,0,0, 0.12);
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
