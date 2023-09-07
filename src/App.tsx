@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 
 import AccountantsView from './views/AccountantsView/AccountantsView';
+import Header from './components/Header';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
 
@@ -9,8 +10,7 @@ const App = () => {
     <div>
       <ThemeProvider theme={theme} >
         <GlobalStyle />
-        <header>
-        </header>
+        <Header />
         <AccountantsView />
       </ThemeProvider>
     </div>

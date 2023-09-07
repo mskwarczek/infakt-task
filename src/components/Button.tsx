@@ -10,12 +10,13 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-`;
-
-const Label = styled.span`
   color: ${({ theme }) => theme.color.text.action};
   font-size: ${({ theme }) => theme.fontSize.small};
   line-height: ${({ theme }) => theme.lineHeight.small};
+  &:hover {
+    background-color: ${({ theme }) => theme.color.text.action};
+    color: ${({ theme }) => theme.color.bg.action};
+  }
 `;
 
 interface CardSectionProps {
@@ -26,7 +27,7 @@ interface CardSectionProps {
 const Button = ({ text, action }: CardSectionProps) => {
   return (
     <ButtonWrapper onClick={action}>
-      <Label>{text}</Label>
+      {text}
     </ButtonWrapper>
   );
 };

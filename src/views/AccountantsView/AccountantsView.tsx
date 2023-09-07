@@ -4,14 +4,16 @@ import AccountantCard from '../../components/AccountantCard';
 import useGetAccountants from '../../api/useGetAccountants';
 
 const ViewWrapper = styled.div`
+width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  justify-content: center;
+  justify-content: space-between;
   row-gap: ${({ theme }) => theme.lineHeight.medium};
   column-gap: ${({ theme }) => theme.lineHeight.medium};
   @media (min-width: ${({ theme }) => theme.breakpoints.s}) {
     grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
     grid-template-columns: 1fr 1fr 1fr;
