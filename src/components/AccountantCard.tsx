@@ -10,6 +10,9 @@ const CardWrapper = styled.div`
   padding: ${({ theme }) => theme.lineHeight.medium};
   border: 1px solid ${({ theme }) => theme.color.bg.secondary};
   border-radius: ${({ theme }) => theme.borderRad.medium};
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 `;
 
 const MailText = styled.span`

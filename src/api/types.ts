@@ -1,5 +1,10 @@
-type ApiLoading = {
+type ApiInit = {
+  status: 'init';
+};
+
+type ApiLoading<T>  = {
   status: 'loading';
+  payload: T;
 };
 
 type ApiFinished<T> = {
@@ -13,7 +18,8 @@ type ApiError = {
 };
 
 export type ApiType<T> =
-  ApiLoading
+  ApiInit
+  | ApiLoading<T>
   | ApiFinished<T>
   | ApiError;
 
